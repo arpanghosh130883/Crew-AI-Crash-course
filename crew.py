@@ -15,5 +15,7 @@ crew = Crew(
 )
 
 ## start the task execution process with enhanced feedback
-result=crew.kickoff(inputs={'topic':'AI VS ML VS DL vs Data Science'})
+result=crew.kickoff(inputs={'topic':'AI VS ML VS DL vs Data Science',
+                           "video_link": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"})
+
 print(result)
