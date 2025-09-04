@@ -1,6 +1,6 @@
 from crewai import Agent
 from tools import yt_tool
-from langchain.
+from langchain_openai import ChatOpenAI
 
 from dotenv import load_dotenv
 
@@ -46,3 +46,4 @@ blog_writer=Agent(
 
 
 )
+
