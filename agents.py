@@ -1,5 +1,6 @@
 from crewai import Agent
 from tools import yt_tool
+from langchain.
 
 from dotenv import load_dotenv
 
@@ -9,6 +10,7 @@ import os
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 os.environ["OPENAI_MODEL_NAME"]="gpt-4-0125-preview"
 
+llm = ChatOpenAI(model='gpt-4o-mini')
 
 ## Create a senior blog content researcher
 
@@ -21,6 +23,7 @@ blog_researcher=Agent(
        "Expert in understanding videos in AI Data Science , MAchine Learning And GEN AI and providing suggestion" 
     ),
     tools=[yt_tool],
+    llm=llm,
     allow_delegation=True
 )
 
@@ -37,7 +40,9 @@ blog_writer=Agent(
         "discoveries to light in an accessible manner."
     ),
     tools=[yt_tool],
+    llm=llm,
     allow_delegation=False
+
 
 
 )
